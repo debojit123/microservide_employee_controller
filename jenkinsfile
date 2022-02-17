@@ -3,10 +3,7 @@ pipeline {
 	stages {
 		stage ('Compile Stage') {
 			steps {
-				withGradle(gradle:'gradle_7_4') {
-					sh 'gradle compileJava'
-				}
-			
+				sh 'gradle compileJava'
 			}
 		
 		}
@@ -14,9 +11,7 @@ pipeline {
 		stage ('Test') {
 		
 			steps {
-				withGradle(gradle:'gradle_7_4') {
-					sh 'gradle test'
-				}
+				sh 'gradle test'
 			}
 		}
 	}
