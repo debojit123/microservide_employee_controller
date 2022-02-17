@@ -1,0 +1,22 @@
+pipeline {
+	agent any
+	stages {
+		stage ('Compile Stage') {
+			steps {
+				withGradle(gradle:'gradle_7_4') {
+					sh 'gradle compileJava'
+				}
+			
+			}
+		
+		}
+		
+		stage ('Test') {
+		
+			steps {
+				withGradle(gradle:'gradle_7_4') {
+					sh 'gradle test'
+				}
+			}
+		}
+}
