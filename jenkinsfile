@@ -7,12 +7,26 @@ pipeline {
 			}
 		
 		}
-		
 		stage ('Test') {
 		
 			steps {
 				bat 'gradle test'
 			}
 		}
+		stage ('Build') {
+		
+			steps {
+				bat 'gradle build'
+			}
+		}
+		stage ('Build Docker Image')
+		{
+			steps {
+				step ('deleting image')
+				{
+				bat docker rm employeecontroller
+				}
+			}
+				
 	}
 }
