@@ -24,9 +24,10 @@ pipeline {
 			steps {
 				step ('deleting image')
 				{
-				bat docker rm employeecontroller
+					bat docker rm employeecontroller
 				}
 			}
+		}
 				
 	}
 }
